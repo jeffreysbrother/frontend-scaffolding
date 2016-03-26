@@ -10,9 +10,9 @@
 * normalize.css CDN
 * Bootstrap CSS (including additional theme and JS) CDN
 * Simple file structure:
-  * sass/
-  * css/
-  * img/
+  * dev/ [development directory for Sass and JS assets]
+  * dist/ [compiled and minified assets]
+  * img/ [image assets]
 * Basic HTML scaffolding
 * .gitignore
 * package.json
@@ -20,6 +20,7 @@
   * grunt
   * grunt-contrib-sass
   * grunt-contrib-watch
-  * 
 
 ##Development Details##
+
+* 
