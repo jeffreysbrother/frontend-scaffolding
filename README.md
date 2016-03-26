@@ -7,13 +7,13 @@
 
 ##What's included?##
 
+* Basic HTML scaffolding
 * normalize.css CDN
 * Bootstrap CSS (including additional theme and JS) CDN
 * Simple file structure:
   * dev/ [development directory for Sass and JS assets]
   * dist/ [compiled and minified assets]
   * img/ [image assets]
-* Basic HTML scaffolding
 * .gitignore
 * package.json
 * pre-configured Gruntfile.js
