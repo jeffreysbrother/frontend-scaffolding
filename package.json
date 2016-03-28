@@ -1,24 +1,23 @@
 {
-  "name": "frontend-scaffolding",
+  "name": "grunt",
   "version": "1.0.0",
-  "description": "1. Clone repo\r 2. Update `package.json` file accordingly (project name, license, etc.)\r 3. Install additional grunt plugins if necessary\r 4. Run `npm install` to install all dev dependencies",
-  "main": "Gruntfile.js",
+  "description": "",
+  "main": "index.html",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/jeffreysbrother/frontend-scaffolding.git"
-  },
-  "author": "",
+  "author": "james cool",
   "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/jeffreysbrother/frontend-scaffolding/issues"
-  },
-  "homepage": "https://github.com/jeffreysbrother/frontend-scaffolding#readme",
   "devDependencies": {
     "grunt": "^0.4.5",
+    "grunt-contrib-cssmin": "^1.0.1",
+    "grunt-contrib-htmlmin": "^1.1.0",
+    "grunt-contrib-imagemin": "^1.0.0",
     "grunt-contrib-sass": "^1.0.0",
-    "grunt-contrib-watch": "^1.0.0"
+    "grunt-contrib-uglify": "^1.0.1",
+    "grunt-contrib-watch": "^1.0.0",
+    "grunt-newer": "^1.1.2",
+    "grunt-processhtml": "^0.3.13",
+    "grunt-uncss": "^0.5.0"
   }
 }
