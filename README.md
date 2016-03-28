@@ -11,9 +11,8 @@
 * normalize.css CDN
 * Bootstrap CSS (including additional theme and JS) CDN
 * Simple file structure:
-  * `dev/` [development directory for Sass and JS assets]
+  * `src/` [development directory]
   * `dist/` [compiled and minified assets]
-  * `img/` [image assets]
 * .gitignore
 * package.json
 * pre-configured Gruntfile.js
@@ -22,5 +21,3 @@
   * grunt-contrib-watch
 
 ##Development Details##
-
-* The `dev/` and `dist/` directories exclude HTML and image assets, so they are not standalone directories. The purpose of this is to make a distinction between ASSETS (specifically, between those suspected to undergo modification), not between different stages of complete code bases. I've done this for a few reasons.
