@@ -8,7 +8,6 @@
 ##What's included?##
 
 * Basic HTML scaffolding
-* normalize.css CDN
 * Bootstrap CSS (including additional theme and JS) CDN
 * Simple file structure:
   * `src/` (development directory)
@@ -21,10 +20,16 @@
   * grunt-contrib-sass
   * grunt-contrib-watch
   * grunt-contrib-imagemin
-  * grunt-processhtml
   * grunt-contrib-uglify
   * grunt-contrib-cssmin
   * grunt-contrib-htmlmin
   * grunt-uncss
+  * grunt-processhtml (this will not run by default, however)
+  
+##Organization##
+
+
 
 ##Development Details##
+
+In order to begin development, run `grunt watch`. This will run a different set of tasks depending on which directory undergoes modification. For example, adding an image to `src/img/` will trigger imagemin, while making an update to an scss file will trigger sass, uncss, and cssmin. In theory, this will save time by running only the tasks that are necessary, given the nature of the current modification.

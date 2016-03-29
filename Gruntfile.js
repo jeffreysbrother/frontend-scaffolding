@@ -94,8 +94,6 @@ module.exports = function(grunt) {
 
   });
 
-  
-
   // Load the plugins
   grunt.loadNpmTasks('grunt-contrib-watch');
   grunt.loadNpmTasks('grunt-contrib-imagemin');
@@ -107,14 +105,12 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-sass');
   grunt.loadNpmTasks('grunt-uncss');
 
-  // task(s).
-  grunt.registerTask('image', ['imagemin']);
-  
-  grunt.registerTask('all', ['newer:imagemin', 'sass', 'processhtml', 'uglify', 'htmlmin', 'uncss', 'cssmin']);
+  // task(s).  
+  grunt.registerTask('prep', ['imagemin', 'sass', 'processhtml', 'uglify', 'htmlmin', 'uncss', 'cssmin']);
   
   grunt.registerTask('image-task', ['newer:imagemin']);
   grunt.registerTask('scripts-task', ['uglify']);
   grunt.registerTask('sass-task', ['sass', 'uncss', 'cssmin']);
-  grunt.registerTask('html-task', ['processhtml', 'htmlmin', 'uncss', 'cssmin']);
+  grunt.registerTask('html-task', ['htmlmin', 'uncss', 'cssmin']);
 
 };
