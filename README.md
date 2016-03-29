@@ -11,13 +11,20 @@
 * normalize.css CDN
 * Bootstrap CSS (including additional theme and JS) CDN
 * Simple file structure:
-  * `src/` [development directory]
-  * `dist/` [compiled and minified assets]
+  * `src/` (development directory)
+  * `dist/` (compiled and minified assets)
 * .gitignore
 * package.json
 * pre-configured Gruntfile.js
   * grunt
+  * grunt-newer
   * grunt-contrib-sass
   * grunt-contrib-watch
+  * grunt-contrib-imagemin
+  * grunt-processhtml
+  * grunt-contrib-uglify
+  * grunt-contrib-cssmin
+  * grunt-contrib-htmlmin
+  * grunt-uncss
 
 ##Development Details##
