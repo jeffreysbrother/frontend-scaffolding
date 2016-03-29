@@ -55,6 +55,12 @@ module.exports = function(grunt) {
       html: {
         files: ['src/index.html'],
         tasks: ['html-task']
+      },
+      configFiles: {
+        files: [ 'Gruntfile.js'],
+        options: {
+          reload: true
+        }
       }
     },
     htmlmin: {                                     
