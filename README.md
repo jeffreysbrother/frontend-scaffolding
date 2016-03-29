@@ -42,7 +42,6 @@ If additional JavaScript files are added and referenced in the HTML file, we wil
 1. Clone this repo
 2. Update `package.json` file if desired (name, license, author, etc.)
 3. Run `npm install` to install all dev dependencies
-4. Install additional grunt plugins if necessary
 
 ##Development Details##
 
