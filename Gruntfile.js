@@ -43,13 +43,6 @@ module.exports = function(grunt) {
       files: ['src/js/*', 'src/index.html', 'src/sass/*'],
       tasks: ['default']
     },
-    uncss: {
-      dist: {
-        files: {
-          'dist/css/main.min.css': ['src/index.html']
-        }
-      }
-    },
     htmlmin: {                                     
       dist: {                                      
         options: {                                 
@@ -70,6 +63,13 @@ module.exports = function(grunt) {
           'dist/css/main.min.css' : 'src/sass/main.scss'
         }
       }
+    },
+    uncss: {
+      dist: {
+        files: {
+          'dist/css/main.min.css': ['src/index.html']
+        }
+      }
     }
 
   });
@@ -83,13 +83,13 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-processhtml');
   grunt.loadNpmTasks('grunt-contrib-uglify');
   grunt.loadNpmTasks('grunt-contrib-cssmin');
-  grunt.loadNpmTasks('grunt-uncss');
   grunt.loadNpmTasks('grunt-contrib-htmlmin');
   grunt.loadNpmTasks('grunt-contrib-sass');
+  grunt.loadNpmTasks('grunt-uncss');
 
   // task(s).
   grunt.registerTask('image', ['imagemin']);
   
-  grunt.registerTask('default', ['newer:imagemin', 'sass', 'processhtml', 'uglify', /*'uncss', */'cssmin:last', 'htmlmin']);
+  grunt.registerTask('default', ['newer:imagemin', 'sass', 'processhtml', 'uglify', 'cssmin:last', 'htmlmin', 'uncss']);
 
 };
