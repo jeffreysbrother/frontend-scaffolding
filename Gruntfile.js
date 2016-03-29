@@ -110,7 +110,7 @@ module.exports = function(grunt) {
   // task(s).
   grunt.registerTask('image', ['imagemin']);
   
-  // grunt.registerTask('default', ['newer:imagemin', 'sass', 'processhtml', 'uglify', 'htmlmin', 'uncss', 'cssmin']);
+  grunt.registerTask('all', ['newer:imagemin', 'sass', 'processhtml', 'uglify', 'htmlmin', 'uncss', 'cssmin']);
   
   grunt.registerTask('image-task', ['newer:imagemin']);
   grunt.registerTask('scripts-task', ['uglify']);
