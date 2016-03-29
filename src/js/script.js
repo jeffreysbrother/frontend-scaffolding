@@ -4,5 +4,8 @@ var test = {
   city: "San Diego",
   greeting: function(x) {
     console.log('Hello, ' + x + ' I am happy to have met you.');
+  },
+  angry: function() {
+    console.log("Your tone is angering me.");
   }
 };

@@ -40,8 +40,22 @@ module.exports = function(grunt) {
       }
     },
     watch: {
-      files: ['src/js/*', 'src/index.html', 'src/sass/*'],
-      tasks: ['default']
+      images: {
+        files: ['src/img/*'],
+        tasks: ['image-task']
+      },
+      scripts: {
+        files: ['src/js/*'],
+        tasks: ['scripts-task']
+      },
+      sass: {
+        files: ['src/sass/*'],
+        tasks: ['sass-task']
+      },
+      html: {
+        files: ['src/index.html'],
+        tasks: ['html-task']
+      }
     },
     htmlmin: {                                     
       dist: {                                      
@@ -90,6 +104,11 @@ module.exports = function(grunt) {
   // task(s).
   grunt.registerTask('image', ['imagemin']);
   
-  grunt.registerTask('default', ['newer:imagemin', 'sass', 'processhtml', 'uglify', 'htmlmin', 'uncss', 'cssmin']);
+  // grunt.registerTask('default', ['newer:imagemin', 'sass', 'processhtml', 'uglify', 'htmlmin', 'uncss', 'cssmin']);
+  
+  grunt.registerTask('image-task', ['newer:imagemin']);
+  grunt.registerTask('scripts-task', ['uglify']);
+  grunt.registerTask('sass-task', ['sass', 'uncss', 'cssmin']);
+  grunt.registerTask('html-task', ['processhtml', 'htmlmin', 'uncss', 'cssmin']);
 
 };
