@@ -26,7 +26,7 @@ module.exports = function(grunt) {
       }
     },
     cssmin: {
-      last: {
+      task: {
         files: {
           'dist/css/main.min.css': ['dist/css/main.min.css']
         }
@@ -67,7 +67,7 @@ module.exports = function(grunt) {
     uncss: {
       dist: {
         files: {
-          'dist/css/main.min.css': ['src/index.html']
+          'dist/css/main.min.css': ['dist/index.html']
         }
       }
     }
@@ -90,6 +90,6 @@ module.exports = function(grunt) {
   // task(s).
   grunt.registerTask('image', ['imagemin']);
   
-  grunt.registerTask('default', ['newer:imagemin', 'sass', 'processhtml', 'uglify', 'cssmin:last', 'htmlmin', 'uncss']);
+  grunt.registerTask('default', ['newer:imagemin', 'sass', 'processhtml', 'uglify', 'htmlmin', 'uncss', 'cssmin']);
 
 };
