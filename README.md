@@ -1,3 +1,5 @@
+note: updated repository can be found [here](https://bitbucket.org/jeffreysbrother/frontend-scaffolding)
+
 ##What is This?##
 
 The master branch of this repository is scaffolding for static HTML projects. It assumes the use of Sass and Grunt, and allows for Sass compilation, the minification of images/JavaScript/CSS/HTML, HTML processing, and the removal of unused CSS rules.
