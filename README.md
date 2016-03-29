@@ -1,9 +1,12 @@
-##What to do##
+##What is This?##
 
-1. Clone this repo
-2. Update `package.json` file if desired (name, license, author, etc.)
-3. Run `npm install` to install all dev dependencies
-4. Install additional grunt plugins if necessary
+The master branch of this repository is scaffolding for static HTML projects. It assumes the use of Sass and Grunt, and allows for Sass compilation, the minification of images/JavaScript/CSS/HTML, HTML processing, and the removal of unused CSS rules.
+
+##Requirements##
+
+* [Node](https://nodejs.org/en/)
+* [npm](https://www.npmjs.com/)
+* [Grunt-cli](http://gruntjs.com/getting-started)
 
 ##What's included?##
 
@@ -33,6 +36,13 @@ As implied earlier, development will take place ONLY in the `src/` directory. We
 Sass partials (prefixed with an underscore) will be imported into main.scss, which will then be compiled to CSS. So, if a page-specfic Sass partial is added, we must manually add an `@import` rule to main.scss.
 
 If additional JavaScript files are added and referenced in the HTML file, we will need to use the processhtml Grunt plugin and associated markup flags to update the script tags. Please go [here](https://github.com/dciccale/grunt-processhtml) for more details.
+
+##What to do##
+
+1. Clone this repo
+2. Update `package.json` file if desired (name, license, author, etc.)
+3. Run `npm install` to install all dev dependencies
+4. Install additional grunt plugins if necessary
 
 ##Development Details##
 
