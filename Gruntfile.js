@@ -3,47 +3,7 @@ module.exports = function(grunt) {
   // Project configuration.
   grunt.initConfig({
     pkg: grunt.file.readJSON('package.json'),
-    sass: {
-      dist: {
-        options: {
-          style: 'compressed'
-        },
-        files: {
-          'dist/css/main.css' : 'src/sass/main.scss'
-        }
-      }
-    },
-    watch: {
-      sass: {
-        files: ['src/sass/**/*.scss'],
-        tasks: ['sass']
-      }
-    }
-
-  });
-
-  // Load the plugins
-  grunt.loadNpmTasks('grunt-contrib-sass');
-  grunt.loadNpmTasks('grunt-contrib-watch');
-
-  // Default task(s).
-  grunt.registerTask('default', ['watch', 'sass']);
-
-};
-
-
-
-
-
-
-
-
-module.exports = function(grunt) {
-
-  //project configuration
-  grunt.initConfig({
-    pkg: grunt.file.readJSON('package.json'),
-
+    
     imagemin: {
       task: {
         options: {
@@ -105,10 +65,23 @@ module.exports = function(grunt) {
           'dist/index.html': 'dist/index.html'     
         }
       }
+    },
+    sass: {
+      dist: {
+        options: {
+          style: 'compressed'
+        },
+        files: {
+          'dist/css/main.css' : 'src/sass/main.scss'
+        }
+      }
     }
 
   });
 
+  
+
+  // Load the plugins
   grunt.loadNpmTasks('grunt-contrib-watch');
   grunt.loadNpmTasks('grunt-contrib-imagemin');
   grunt.loadNpmTasks('grunt-newer');
@@ -118,8 +91,9 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-uncss');
   grunt.loadNpmTasks('grunt-contrib-htmlmin');
 
+  // task(s).
   grunt.registerTask('image', ['newer:imagemin']);
   
-  grunt.registerTask('default', ['newer:imagemin', 'cssmin:first', 'processhtml', 'uncss', 'cssmin:last', 'htmlmin']);
-  
+  grunt.registerTask('default', ['newer:imagemin', 'cssmin:first', 'processhtml', 'uncss', 'cssmin:last', 'htmlmin', 'sass']);
+
 };
