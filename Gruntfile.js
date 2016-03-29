@@ -13,30 +13,9 @@ module.exports = function(grunt) {
         files: [{
           expand: true,
           cwd: 'src/img/',
-          src: ['*.{jpg,jpeg,JPG,JPEG,png,PNG}'],
+          src: ['*.{jpg,jpeg,JPG,JPEG,png,PNG,gif,GIF}'],
           dest: 'dist/img/'
         }]
-      }
-    },
-    uglify: {
-      target: {
-        files: {
-          'dist/js/scripts.min.js': ['src/js/script.js']
-        }
-      }
-    },
-    cssmin: {
-      task: {
-        files: {
-          'dist/css/main.min.css': ['dist/css/main.min.css']
-        }
-      }
-    },
-    processhtml: {
-      dist: {
-        files: {
-          'dist/index.html': ['src/index.html']
-        }
       }
     },
     watch: {
@@ -44,53 +23,14 @@ module.exports = function(grunt) {
         files: ['src/img/*'],
         tasks: ['image-task']
       },
-      scripts: {
-        files: ['src/js/*'],
-        tasks: ['scripts-task']
-      },
-      sass: {
-        files: ['src/sass/*'],
-        tasks: ['sass-task']
-      },
-      html: {
-        files: ['src/index.html'],
-        tasks: ['html-task']
-      },
       configFiles: {
         files: [ 'Gruntfile.js'],
         options: {
           reload: true
         }
       }
-    },
-    htmlmin: {                                     
-      dist: {                                      
-        options: {                                 
-          removeComments: true,
-          collapseWhitespace: true
-        },
-        files: {                                   
-          'dist/index.html': 'dist/index.html'     
-        }
-      }
-    },
-    sass: {
-      dist: {
-        options: {
-          style: 'compressed'
-        },
-        files: {
-          'dist/css/main.min.css' : 'src/sass/main.scss'
-        }
-      }
-    },
-    uncss: {
-      dist: {
-        files: {
-          'dist/css/main.min.css': ['dist/index.html']
-        }
-      }
     }
+    
 
   });
 
@@ -98,19 +38,8 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-watch');
   grunt.loadNpmTasks('grunt-contrib-imagemin');
   grunt.loadNpmTasks('grunt-newer');
-  grunt.loadNpmTasks('grunt-processhtml');
-  grunt.loadNpmTasks('grunt-contrib-uglify');
-  grunt.loadNpmTasks('grunt-contrib-cssmin');
-  grunt.loadNpmTasks('grunt-contrib-htmlmin');
-  grunt.loadNpmTasks('grunt-contrib-sass');
-  grunt.loadNpmTasks('grunt-uncss');
 
-  // task(s).  
-  grunt.registerTask('prep', ['imagemin', 'sass', 'processhtml', 'uglify', 'htmlmin', 'uncss', 'cssmin']);
-  
+  // task(s).    
   grunt.registerTask('image-task', ['newer:imagemin']);
-  grunt.registerTask('scripts-task', ['uglify']);
-  grunt.registerTask('sass-task', ['sass', 'uncss', 'cssmin']);
-  grunt.registerTask('html-task', ['htmlmin', 'uncss', 'cssmin']);
 
 };
