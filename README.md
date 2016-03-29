@@ -11,7 +11,7 @@
 * Bootstrap CSS (including additional theme and JS) CDN
 * Simple file structure:
   * `src/` (development directory)
-  * `dist/` (compiled and minified assets)
+  * `dist/` (compiled and minified assets generated from `src/`)
 * .gitignore
 * package.json
 * pre-configured Gruntfile.js
