@@ -12,28 +12,23 @@ module.exports = function(grunt) {
         },
         files: [{
           expand: true,
-          cwd: 'src/images/',
+          cwd: 'src/img/',
           src: ['*.{jpg,jpeg,JPG,JPEG,png,PNG}'],
-          dest: 'dist/images/'
+          dest: 'dist/img/'
         }]
       }
     },
     uglify: {
       target: {
         files: {
-          'dist/output.min.js': ['x', 'y']
+          'dist/js/scripts.min.js': ['src/js/script.js']
         }
       }
     },
     cssmin: {
-      first: {
-        files: {
-          'dist/css/style.min.css': ['src/css/bootstrap.min.css', 'src/css/app.css']
-        }
-      },
       last: {
         files: {
-          'dist/css/style.min.css': ['dist/css/style.min.css']
+          'dist/css/main.min.css': ['dist/css/main.min.css']
         }
       }
     },
@@ -45,13 +40,13 @@ module.exports = function(grunt) {
       }
     },
     watch: {
-      files: ['src/css/*', 'src/js/*', 'src/index.html', 'src/sass/*'],
+      files: ['src/js/*', 'src/index.html', 'src/sass/*'],
       tasks: ['default']
     },
     uncss: {
       dist: {
         files: {
-          'dist/css/style.min.css': ['src/index.html']
+          'dist/css/main.min.css': ['src/index.html']
         }
       }
     },
@@ -72,7 +67,7 @@ module.exports = function(grunt) {
           style: 'compressed'
         },
         files: {
-          'dist/css/main.css' : 'src/sass/main.scss'
+          'dist/css/main.min.css' : 'src/sass/main.scss'
         }
       }
     }
@@ -90,10 +85,11 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-cssmin');
   grunt.loadNpmTasks('grunt-uncss');
   grunt.loadNpmTasks('grunt-contrib-htmlmin');
+  grunt.loadNpmTasks('grunt-contrib-sass');
 
   // task(s).
-  grunt.registerTask('image', ['newer:imagemin']);
+  grunt.registerTask('image', ['imagemin']);
   
-  grunt.registerTask('default', ['newer:imagemin', 'cssmin:first', 'processhtml', 'uncss', 'cssmin:last', 'htmlmin', 'sass']);
+  grunt.registerTask('default', ['newer:imagemin', 'sass', 'processhtml', 'uglify', /*'uncss', */'cssmin:last', 'htmlmin']);
 
 };

@@ -6,4 +6,10 @@
     font-weight: bold;
     background-color: red;
   }
+  div {
+    display: block;
+    width: 200px;
+    height: 300px;
+    border: 2px dotted $orangePartyGirl_69;
+  }
 }
